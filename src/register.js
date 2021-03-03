@@ -30,10 +30,7 @@ export const register = `
     <h2 class="titulo"> Registrate </h2>
     <form class="container-register">
      <input class="input-login line-register" type="email" placeholder="Correo Electrónico">
-     <input class="input-login line-register" type="text" placeholder="Nombre completo">
-     <input class="input-login line-register" type="text" placeholder="Nombre de usuario">
      <input class="input-login line-register" type="password" placeholder="Contraseña">
-     <input class="input-login line-register" type="password" placeholder="Confirmar contraseña">
      <button id="btn-register" class="input-login send">Registrate</button>
    </form>
    <button id="backToLogin" class="input-login send back"> Regresar </button>

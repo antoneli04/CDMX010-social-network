@@ -22,8 +22,8 @@ export const login = `
       <p>Inicia Sesión con</p>
     </div>
     <div class="container-social">
-      <img class="socialnetwork-logo" src="./assets/IconoFB.png">
-      <img class="socialnetwork-logo" src="./assets/IconG+.png">
+      <img class="socialnetwork-logo" id="icon-facebook" src="./assets/IconoFB.png">
+      <img class="socialnetwork-logo" id="icon-google" src="./assets/IconG+.png">
     </div>
   </div>
 </div>
