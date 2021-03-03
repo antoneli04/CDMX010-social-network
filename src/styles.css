@@ -241,13 +241,15 @@ body {
 }
 
 @media only screen and (max-width: 360px) {
-  /*My profile*/
   #home-desktop {
     display: none;
   }
-  #home-mobile {
+  /* #home-mobile{
     display: block;
   }
+   */
+
+  /*My profile*/
   .container-me {
     display: flex;
     flex-wrap: wrap;
@@ -465,7 +467,15 @@ body {
   }
 }
 
+/*-------Desktop-------*/
+
 @media only screen and (max-width: 1920px) {
+  #home-mobile {
+    display: none;
+  }
+  /* #home-desktop{
+    display: block;
+  } */
   /*My profile Desktop*/
   .principal-container {
     display: flex;
@@ -527,7 +537,6 @@ body {
   .search-desktop::-webkit-input-placeholder {
     color: white;
   }
-
   .menu-desktop {
     width: 20vw;
     display: flex;
@@ -560,12 +569,10 @@ body {
     width: 100%;
   }
   .img-menu-desktop img {
-    width: 20vw; /*                    here */
+    width: 20vw;
     padding-top: 100%;
   }
-
   .container-me-desktop {
-    align-content: space-between;
     width: 60vw;
     height: auto;
     display: flex;
@@ -646,7 +653,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px; /*                   here*/
+    margin-bottom: 10px;
   }
   .section-posts-desktop {
     display: flex;
@@ -662,7 +669,7 @@ body {
     border-radius: 16px 0px;
     padding: 2%;
     overflow-y: scroll;
-    overflow: hidden; /*here             */
+    overflow: hidden;
     margin-bottom: 2%;
   }
   .div-comments-desktop {
@@ -686,7 +693,7 @@ body {
     margin-left: 2%;
     margin-bottom: 2%;
     overflow-y: scroll;
-    overflow: hidden; /*here             */
+    overflow: hidden;
     line-height: 95%;
   }
   .second-comment-desktop {
@@ -698,7 +705,6 @@ body {
     padding: 5px;
     margin-left: 2%;
     overflow-y: scroll;
-    overflow: hidden; /*here             */
     line-height: 95%;
   }
   .counter-comments-desktop {
@@ -718,7 +724,7 @@ body {
     border-radius: 25px;
     padding: 1%;
     overflow-y: scroll;
-    overflow: hidden; /*here             */
+    overflow: hidden;
   }
   .send-submit-desktop {
     height: 35px;
