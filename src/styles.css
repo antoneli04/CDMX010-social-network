@@ -18,469 +18,23 @@ body {
   color: black;
   padding: 10px;
 }
-@media only screen and (max-width: 360px) {
-  /* Login */
-  .div-login {
-    width: 90vmax;
-    height: 90vmax;
-    min-height: 90vmax; /* aqui*/
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    padding-bottom: 5%;
-  }
-  .container-image {
-    display: flex;
-    align-content: center;
-    justify-content: space-around;
-  }
-  .img-logo-login {
-    width: 50%;
-  }
-  h2 {
-    padding: 10px 0px 20px 0px;
-  }
-  .form-login {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 90%;
-  }
-  .input-login {
-    margin-bottom: 5%;
-  }
-  input:focus {
-    outline: none;
-  }
-  button:focus {
-    outline: none;
-  }
-  .line {
-    text-align: center;
-    background-color: #f8f4f3;
-    border: none;
-    border-bottom: 2px solid black;
-    font-size: 16px;
-  }
-  .send {
-    border: 3px solid #a8babe;
-    border-radius: 20px;
-    background-color: white;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 3px;
-  }
-  .send:hover {
-    color: #f8f4f3;
-    background-color: #4e1706;
-    border: 3px solid #c88758;
-  }
-  .back {
-    padding: 5px 10px 5px 10px;
-    font-size: 16px;
-  }
-  .socialnetwork-logo {
-    width: 35vmax;
-  }
-  .text-login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    width: 90%;
-  }
-
-  .container-social {
-    width: 90%;
-    display: flex;
-    justify-content: space-around;
-  }
-  /* Register */
-  .div-register {
-    width: 100%;
-    height: auto; /* aqui*/
-    display: flex;
-    justify-content: center;
-    align-content: space-between;
-    text-align: center;
-  }
-  .container-register {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    justify-content: space-around;
-  }
-  .line-register {
-    text-align: center;
-    background-color: #f8f4f3;
-    border: none;
-    border-bottom: 2px solid black;
-    font-size: 16px;
-  }
-}
-
-/*  Laptop */
-@media only screen and (max-width: 1920px) {
-  /* Login */
-  /* body {
-    background-image: url(./assets/Pie\ cafe.png);
-    background-size: 30%;
-    background-repeat: repeat-x;
-    background-position: bottom;
-    background-attachment: fixed;
-  } */
-  .div-login {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-  }
-  .container-image {
-    display: flex;
-    width: 50%;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-  }
-  .container-login {
-    text-align: center;
-    height: 85vh;
-    padding: 5vh;
-  }
-
-  .img-logo-login {
-    width: 36vmax;
-    padding-right: 5%;
-  }
-  h2 {
-    padding: 3% 0% 3% 0%;
-  }
-  .form-login {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 100%;
-  }
-  .input-login {
-    margin-bottom: 10%;
-  }
-  input:focus {
-    outline: none;
-  }
-  button:focus {
-    outline: none;
-  }
-  .line {
-    text-align: center;
-    background-color: #f8f4f3;
-    border: none;
-    border-bottom: 2px solid black;
-    font-size: 16px;
-    margin-bottom: 20%;
-  }
-  .send {
-    border: 3px solid #a8babe;
-    border-radius: 20px;
-    background-color: white;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 3px;
-  }
-  .send:hover {
-    color: #f8f4f3;
-    background-color: #4e1706;
-    border: 3px solid #c88758;
-  }
-  .back {
-    padding: 5px 10px 5px 10px;
-    font-size: 16px;
-  }
-  .socialnetwork-logo {
-    width: 50px;
-  }
-  .text-login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-  }
-  .container-social {
-    min-width: 285px;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10%; /* aqui*/
-  }
-  /* Register */
-  .div-register {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-  }
-
-  .container-register {
-    display: flex;
-    flex-direction: column;
-    width: 25vw;
-    text-align: center;
-  }
-  .line-register {
-    text-align: center;
-    background-color: #f8f4f3;
-    border: none;
-    border-bottom: 2px solid black;
-    font-size: 16px;
-    margin-bottom: 10%;
-  }
-}
-
-@media only screen and (max-width: 360px) {
-  #home-desktop {
-    display: none;
-  }
-  /* #home-mobile{
-    display: block;
-  }
-   */
-
-  /*My profile*/
-  .container-me {
-    display: flex;
-    flex-wrap: wrap;
-    height: auto;
-    padding-top: 10vh;
-  }
-  p {
-    font-size: 14px;
-  }
-  .container-home-head {
-    display: flex;
-    background-color: white;
-    border-bottom: 2px #4e1706 solid;
-    width: 100vw;
-    height: 10vh;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-  }
-  .div-search-head {
-    width: 60px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .logo-home {
-    width: 70px;
-    height: 40px;
-    padding-left: 10%;
-  }
-  .icon-home-head {
-    height: 20px;
-  }
-  #img-profile {
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    border: 1px #4e1706 solid;
-    margin: 3%;
-    display: block;
-  }
-  .container-posts {
-    width: 80%;
-    margin: auto;
-    display: block;
-    margin: auto;
-  }
-  .posts {
-    width: 260px;
-    height: 50px;
-    border: 2px #4e1706 solid;
-    display: block;
-    margin: auto;
-  }
-  .icon-left {
-    display: flex;
-    align-items: center;
-  }
-  .icons-posts {
-    width: 20px;
-    height: 20px;
-    margin: 5px;
-  }
-  .input-post {
-    background-color: #dfe1e3;
-    border: 2px #4e1706 solid;
-    width: 98%;
-    height: 25px;
-    border-radius: 15px;
-    padding: 2%;
-    overflow-y: scroll;
-    overflow: hidden;
-    line-height: 95%;
-  }
-  .icons-myPosts {
-    width: 98%;
-    /*padding: 2%;*/
-    display: flex;
-    justify-content: flex-end;
-    outline: none;
-  }
-  .container-img {
-    width: 100%;
-    height: 20%;
-  }
-  .img-post {
-    width: 298px;
-    height: 80px;
-    border: 2px #4e1706 solid;
-  }
-  .container-icons-post {
-    display: flex;
-    justify-content: space-between;
-  }
-  .btn-icons {
-    background-color: #f8f4f3;
-    outline: none;
-    border: none;
-  }
-  #icon-likes {
-    width: 25px;
-  }
-  .counter {
-    padding: 5px;
-    display: inline-block;
-  }
-  section p {
-    line-height: 95%;
-  }
-  .section-posts {
-    display: flex;
-    align-content: space-between;
-    flex-direction: column;
-    height: 40%;
-  }
-  .myPost {
-    width: 95%;
-    height: 40px;
-    background-color: #a8babe;
-    border: 2px solid #4e1706;
-    border-radius: 16px 0px;
-    padding: 2%;
-    margin-bottom: 5%;
-    overflow-y: scroll;
-  }
-  .div-comments {
-    display: flex;
-    align-content: flex-start;
-  }
-  .photo-friend {
-    width: 36px;
-    height: 36px;
-    border-radius: 18px;
-    border: 1px #4e1706 solid;
-    /*margin: 3%;*/
-    display: block;
-  }
-  .first-comment {
-    background-color: #dfe1e3;
-    border: 2px #4e1706 solid;
-    width: 85%;
-    height: 35px;
-    border-radius: 16px 0px;
-    /*padding: 2px;*/
-    margin-left: 2%;
-    margin-bottom: 3.5%;
-    overflow-y: scroll;
-    overflow: hidden;
-    line-height: 95%;
-  }
-  .second-comment {
-    background-color: #dfe1e3;
-    border: 2px #4e1706 solid;
-    width: 85%;
-    height: 35px;
-    border-radius: 16px 0px;
-    /* padding: 2px;*/
-    margin-left: 2%;
-    margin-bottom: 3.5%;
-    overflow-y: scroll;
-    overflow: hidden;
-    line-height: 95%;
-  }
-  .counter-comments {
-    margin: 1%;
-    padding: 0px 0px 4px;
-  }
-  .form-comments {
-    display: flex;
-    align-items: center;
-  }
-  .post-comment {
-    background-color: #dfe1e3;
-    border: 2px #4e1706 solid;
-    width: 82%;
-    height: 25px;
-    border-radius: 15px;
-    padding: 1%;
-    overflow-y: scroll;
-    overflow: hidden;
-  }
-  .container-navigation {
-    position: fixed;
-    padding: 2%;
-    background-color: #c88758;
-    height: 25px;
-    display: flex;
-    border: 2px #4e1706 solid;
-    width: 100vw;
-    justify-content: space-around;
-    bottom: 0px;
-  }
-  .icon-home {
-    height: 25px;
-    display: flex;
-  }
-
-  /*home*/
-  .container-home {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100vh;
-    padding-top: 10vh;
-    align-content: space-between;
-  }
-  .myPost-home {
-    width: 95%;
-    height: 60px;
-    background-color: #a8babe;
-    border: 2px solid #4e1706;
-    border-radius: 16px 0px;
-    padding: 2%;
-    margin-bottom: 5%;
-    overflow-y: scroll;
-    overflow: hidden;
-  }
-  .img-post-home {
-    width: 280px;
-    height: 120px;
-    border: 2px #4e1706 solid;
-  }
-}
 
 /*-------Desktop-------*/
 
 @media only screen and (max-width: 1920px) {
+  #home-desktop {
+    display: block;
+  }
   #home-mobile {
     display: none;
   }
-  /* #home-desktop{
+  #me-desktop {
     display: block;
-  } */
+  }
+  #me-mobile {
+    display: none;
+  }
+
   /*My profile Desktop*/
   .principal-container {
     display: flex;
@@ -570,7 +124,6 @@ body {
   .nav-desktop a:hover {
     color: #f8f4f3;
   }
-
   .img-menu-desktop {
     width: 100%;
   }
@@ -659,7 +212,6 @@ body {
     width: 100%;
     border: 4px solid #4e1706;
   }
-
   .container-icons-post-desktop {
     width: 100%;
     display: flex;
@@ -747,5 +299,464 @@ body {
     margin-left: 5px;
     border-radius: 10px;
     font-weight: 700;
+  }
+}
+
+/*  Laptop */
+@media only screen and (max-width: 1920px) {
+  /* Login */
+  /* body {
+    background-image: url(./assets/Pie\ cafe.png);
+    background-size: 30%;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-attachment: fixed;
+  } */
+  .div-login {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 5%;
+  }
+  .container-image {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+  }
+  .container-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5%;
+  }
+  .container-login {
+    text-align: center;
+    height: auto;
+  }
+  .img-logo-login {
+    width: 80%;
+  }
+  h2 {
+    padding: 20px 0px 20px 0px;
+  }
+  .form-login {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 300px;
+  }
+  .input-login {
+    margin-bottom: 5%;
+  }
+  input:focus {
+    outline: none;
+  }
+  button:focus {
+    outline: none;
+  }
+  .line {
+    text-align: center;
+    background-color: #f8f4f3;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 16px;
+    margin-bottom: 45px;
+  }
+  .send {
+    border: 3px solid #a8babe;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 3px;
+  }
+  .send:hover {
+    color: #f8f4f3;
+    background-color: #4e1706;
+    border: 3px solid #c88758;
+  }
+  .back {
+    padding: 5px 10px 5px 10px;
+    font-size: 16px;
+  }
+  .socialnetwork-logo {
+    width: 35vmax;
+  }
+  .text-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 285px;
+  }
+  .container-social {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  /* Register */
+  .div-register {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    padding: 0px;
+    text-align: center;
+  }
+  .container-register {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: auto;
+    text-align: center;
+  }
+  .line-register {
+    text-align: center;
+    background-color: #f8f4f3;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  /* Login */
+  .div-login {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+    padding: 0px;
+    padding-bottom: 25px;
+  }
+  .img-logo-login {
+    width: 60%;
+  }
+  h2 {
+    padding: 20px 0px 40px 0px;
+  }
+  .form-login {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 285px;
+  }
+  .input-login {
+    margin-bottom: 10%;
+  }
+  input:focus {
+    outline: none;
+  }
+  button:focus {
+    outline: none;
+  }
+  .line {
+    text-align: center;
+    background-color: #f8f4f3;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 16px;
+  }
+  .send {
+    border: 3px solid #a8babe;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 3px;
+  }
+  .send:hover {
+    color: #f8f4f3;
+    background-color: #4e1706;
+    border: 3px solid #c88758;
+  }
+  .back {
+    padding: 5px 10px 5px 10px;
+    font-size: 16px;
+  }
+  .socialnetwork-logo {
+    width: 50px;
+  }
+  .text-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 285px;
+  }
+  p {
+    padding-bottom: 20px;
+  }
+  .container-social {
+    min-width: 285px;
+    display: flex;
+    justify-content: space-around;
+  }
+  /* Register */
+  .div-register {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    padding: 0px;
+    /* padding-bottom: 25px; 15*/
+    text-align: center;
+  }
+
+  .container-register {
+    display: flex;
+    flex-direction: column;
+    width: 285px;
+    justify-content: space-around;
+  }
+  .line-register {
+    text-align: center;
+    background-color: #f8f4f3;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  #home-mobile {
+    display: flex;
+  }
+  #home-desktop {
+    display: none;
+  }
+  #me-mobile {
+    display: flex;
+  }
+  #me-desktop {
+    display: none;
+  }
+
+  /*My profile*/
+  .container-me {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    padding-top: 10vh;
+  }
+  p {
+    font-size: 14px;
+  }
+  .container-home-head {
+    display: flex;
+    background-color: white;
+    border-bottom: 2px #4e1706 solid;
+    width: 100vw;
+    height: 10vh;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+  }
+  .div-search-head {
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .logo-home {
+    width: 70px;
+    height: 40px;
+    padding-left: 10%;
+  }
+  .icon-home-head {
+    height: 20px;
+  }
+  #img-profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    border: 1px #4e1706 solid;
+    margin: 3%;
+    display: block;
+  }
+  .container-posts {
+    width: 80%;
+    margin: auto;
+    display: block;
+    margin: auto;
+  }
+  .posts {
+    width: 260px;
+    height: 50px;
+    border: 2px #4e1706 solid;
+    display: block;
+    margin: auto;
+  }
+  .icon-left {
+    display: flex;
+    align-items: center;
+  }
+  .icons-posts {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+  }
+  .input-post {
+    background-color: #dfe1e3;
+    border: 2px #4e1706 solid;
+    width: 98%;
+    height: 25px;
+    border-radius: 15px;
+    padding: 2%;
+    overflow-y: scroll;
+    line-height: 95%;
+  }
+  .icons-myPosts {
+    width: 98%;
+    /*padding: 2%;*/
+    display: flex;
+    justify-content: flex-end;
+    outline: none;
+  }
+  .container-img {
+    width: 100%;
+    height: 20%;
+  }
+  .img-post {
+    width: 298px;
+    height: 80px;
+    border: 2px #4e1706 solid;
+  }
+  .container-icons-post {
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn-icons {
+    background-color: #f8f4f3;
+    outline: none;
+    border: none;
+  }
+  #icon-likes {
+    width: 25px;
+  }
+  .counter {
+    padding: 5px;
+    display: inline-block;
+  }
+  section p {
+    line-height: 95%;
+  }
+  .section-posts {
+    display: flex;
+    align-content: space-between;
+    flex-direction: column;
+    height: 40%;
+  }
+  .myPost {
+    width: 95%;
+    height: 40px;
+    background-color: #a8babe;
+    border: 2px solid #4e1706;
+    border-radius: 16px 0px;
+    padding: 2%;
+    margin-bottom: 5%;
+    overflow-y: scroll;
+  }
+  .div-comments {
+    display: flex;
+    align-content: flex-start;
+  }
+  .photo-friend {
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    border: 1px #4e1706 solid;
+    /*margin: 3%;*/
+    display: block;
+  }
+  .first-comment {
+    background-color: #dfe1e3;
+    border: 2px #4e1706 solid;
+    width: 85%;
+    height: 35px;
+    border-radius: 16px 0px;
+    /*padding: 2px;*/
+    margin-left: 2%;
+    margin-bottom: 3.5%;
+    overflow-y: scroll;
+    line-height: 95%;
+  }
+  .second-comment {
+    background-color: #dfe1e3;
+    border: 2px #4e1706 solid;
+    width: 85%;
+    height: 35px;
+    border-radius: 16px 0px;
+    /* padding: 2px;*/
+    margin-left: 2%;
+    margin-bottom: 3.5%;
+    overflow-y: scroll;
+    overflow: hidden;
+    line-height: 95%;
+  }
+  .counter-comments {
+    margin: 1%;
+    padding: 0px 0px 4px;
+  }
+  .form-comments {
+    display: flex;
+    align-items: center;
+  }
+  .post-comment {
+    background-color: #dfe1e3;
+    border: 2px #4e1706 solid;
+    width: 82%;
+    height: 25px;
+    border-radius: 15px;
+    padding: 1%;
+    overflow-y: scroll;
+  }
+  .container-navigation {
+    position: fixed;
+    padding: 2%;
+    background-color: #c88758;
+    height: 25px;
+    display: flex;
+    border: 2px #4e1706 solid;
+    width: 100vw;
+    justify-content: space-around;
+    bottom: 0px;
+  }
+  .icon-home {
+    height: 25px;
+    display: flex;
+  }
+
+  /*home*/
+  .container-home {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    padding-top: 10vh;
+    align-content: space-between;
+  }
+  .myPost-home {
+    width: 95%;
+    height: 60px;
+    background-color: #a8babe;
+    border: 2px solid #4e1706;
+    border-radius: 16px 0px;
+    padding: 2%;
+    margin-bottom: 5%;
+    overflow-y: scroll;
+  }
+  .img-post-home {
+    width: 280px;
+    height: 120px;
+    border: 2px #4e1706 solid;
   }
 }
