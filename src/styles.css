@@ -320,6 +320,7 @@ body {
     border-radius: 15px;
     padding: 2%;
     overflow-y: scroll;
+    overflow: hidden;
     line-height: 95%;
   }
   .icons-myPosts {
@@ -395,6 +396,7 @@ body {
     margin-left: 2%;
     margin-bottom: 3.5%;
     overflow-y: scroll;
+    overflow: hidden;
     line-height: 95%;
   }
   .second-comment {
@@ -407,6 +409,7 @@ body {
     margin-left: 2%;
     margin-bottom: 3.5%;
     overflow-y: scroll;
+    overflow: hidden;
     line-height: 95%;
   }
   .counter-comments {
@@ -425,6 +428,7 @@ body {
     border-radius: 15px;
     padding: 1%;
     overflow-y: scroll;
+    overflow: hidden;
   }
   .container-navigation {
     position: fixed;
@@ -459,6 +463,7 @@ body {
     padding: 2%;
     margin-bottom: 5%;
     overflow-y: scroll;
+    overflow: hidden;
   }
   .img-post-home {
     width: 280px;
@@ -508,7 +513,7 @@ body {
     margin-top: 18px;
     background-color: #c69572;
     display: flex;
-    border: 2px #4e1706 solid;
+    border: 3px #4e1706 solid;
     justify-content: space-around;
   }
   .icon-home-desktop {
@@ -548,7 +553,8 @@ body {
     width: 80%;
   }
   .nav-desktop ul {
-    border: 1px solid #4e1706;
+    border: 3px solid #4e1706;
+    border-top: 1px solid #4e1706;
     height: 40px;
     background-color: #c69572;
     list-style: none;
@@ -600,7 +606,7 @@ body {
   .adds-desktop img {
     width: 80%;
     height: 33vh;
-    border: 2px solid #4e1706;
+    border: 4px solid #4e1706;
   }
   .adds-desktop p {
     padding: 5px;
@@ -621,6 +627,7 @@ body {
     padding: 5px;
     border-radius: 25px;
     overflow-y: scroll;
+    overflow: hidden;
     line-height: 95%;
   }
   .icons-myPosts-desktop {
@@ -642,13 +649,17 @@ body {
   .container-img-desktop {
     display: flex;
     justify-content: space-between;
+    align-content: center;
     width: 100%;
-    height: 25vh;
   }
-  .container-img-desktop img {
+  .img-post-desktop {
     width: 30%;
-    border: 2px solid #4e1706;
   }
+  .img-post-desktop img {
+    width: 100%;
+    border: 4px solid #4e1706;
+  }
+
   .container-icons-post-desktop {
     width: 100%;
     display: flex;
@@ -705,6 +716,7 @@ body {
     padding: 5px;
     margin-left: 2%;
     overflow-y: scroll;
+    overflow: hidden;
     line-height: 95%;
   }
   .counter-comments-desktop {

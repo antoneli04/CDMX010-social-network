@@ -122,9 +122,9 @@ export const me = `
             </div>
         </form>
     <div class='container-img-desktop'>
-        <img class='img-post-desktop' src='../assets/tyler-nix-.jpg'>
-        <img class='img-post-desktop' src='../assets/gregory-hayes.jpg'>
-        <img class='img-post-desktop' src='../assets/blue-cup.jpg'>
+        <figure class='img-post-desktop'><img src='../assets/image-uno.jpg'></figure>
+        <figure class='img-post-desktop'><img src='../assets/image-dos.jpg'></figure>
+        <figure class='img-post-desktop'><img src='../assets/image-tres.jpg'></figure>
     </div>
     <div class='container-icons-post-desktop'>
         <div class='icon-left-desktop'>
@@ -162,12 +162,12 @@ export const me = `
     </section>
   </div>
   <aside class='aside-desktop'>
-    <div class='adds-desktop'><img  src='./assets/anuncio-uno.jpg' alt='anuncio' /></div>
-    <p>Ir al sitio</p>
-    <div class='adds-desktop'><img  src='./assets/anuncio-dos.jpg' alt='anuncio' /></div>
-    <p>Ir al sitio</p>
-    <div class='adds-desktop'><img src='./assets/auncio-tres.jpg' alt='anun' /></div>
-    <p>Ir al sitio</p>
+    <figure class='adds-desktop'><img  src='./assets/anuncio-uno.jpg' alt='anuncio' /></figure>
+    <figcaption>Ir al sitio</figcaption>
+    <figure class='adds-desktop'><img  src='./assets/anuncio-dos.jpg' alt='anuncio' /></figure>
+    <figcaption>Ir al sitio</figcaption>
+    <figure class='adds-desktop'><img src='./assets/auncio-tres.jpg' alt='anun' /></figure>
+    <figcaption>Ir al sitio</figcaption>
   </aside>
 </main>
 </div>
