@@ -4,6 +4,7 @@ import { myFunction } from './lib/index.js';
 
 myFunction();
 */
+import { routes, rootDiv, onNavigate } from "./routes.js";
 
 window.onpopstate = () => {
   rootDiv.innerHTML = routes[window.location.pathname];
