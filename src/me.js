@@ -162,11 +162,11 @@ export const me = `
     </section>
   </div>
   <aside class='aside-desktop'>
-    <figure class='adds-desktop'><img  src='./assets/anuncio-uno.jpg' alt='anuncio' /></figure>
+    <figure class='adds-desktop'><img  src='./assets/add-uno.jpg' alt='anuncio' /></figure>
     <figcaption>Ir al sitio</figcaption>
-    <figure class='adds-desktop'><img  src='./assets/anuncio-dos.jpg' alt='anuncio' /></figure>
+    <figure class='adds-desktop'><img  src='./assets/add-dos.jpg' alt='anuncio' /></figure>
     <figcaption>Ir al sitio</figcaption>
-    <figure class='adds-desktop'><img src='./assets/auncio-tres.jpg' alt='anun' /></figure>
+    <figure class='adds-desktop'><img src='./assets/add-tres.jpg' alt='anun' /></figure>
     <figcaption>Ir al sitio</figcaption>
   </aside>
 </main>
