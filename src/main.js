@@ -1,7 +1,5 @@
 // Este es el punto de entrada de tu aplicacion
 
-myFunction();
-*/
 import { routes, rootDiv, onNavigate } from "./routes.js";
 
 window.onpopstate = () => {
