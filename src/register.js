@@ -4,7 +4,7 @@ import { onNavigate } from "./routes.js";
 export const register = `
 <div class='div-register'>
   <div class='container-image'>
-    <img class='img-logo-login' src='./assets/coffeehousesmall-01.png' alt='Logo Coffee House'><br>
+    <img class='img-logo-register' src='./assets/coffeehousesmall-01.png' alt='Logo Coffee House'><br>
   </div>
   <div class='container-register'>
     <h2 class='titulo'> Registrate </h2>
