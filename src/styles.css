@@ -360,12 +360,14 @@ body {
     background-color: #4e1706;
     border: 3px solid #c88758;
   }
-  .back {
-    padding: 5px 10px 5px 10px;
-    font-size: 16px;
+  .container-login {
+    width: 80vw;
+    height: 80vh;
+    justify-content: center;
+    align-content: space-between;
   }
-  .socialnetwork-logo {
-    width: 50px;
+  .form-login {
+    width: 80vw;
   }
   .text-login {
     display: flex;
@@ -380,12 +382,12 @@ body {
     justify-content: space-around;
     margin-top: 20px;
   }
-  /* Register */
+  /*Register*/
   .div-register {
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-wrap: wrap;
+    align-content: flex-start;
     justify-content: center;
     align-content: center;
     text-align: center;
@@ -402,11 +404,7 @@ body {
     justify-content: space-around;
   }
   .line-register {
-    text-align: center;
-    background-color: #f8f4f3;
-    border: none;
-    border-bottom: 2px solid black;
-    font-size: 16px;
+    margin-bottom: 0;
   }
 }
 
@@ -465,9 +463,7 @@ body {
     margin-bottom: 0;
   }
 }
-
 @media only screen and (max-width: 360px) {
-  /*heeeeeeeeerrrrrrrrrrrrrreeeeeeeeeee*/
   #home-mobile {
     display: flex;
   }
@@ -480,7 +476,7 @@ body {
   #me-desktop {
     display: none;
   }
-  /*My profile*/
+  /*My profile*/
   .me-mobile {
     width: 100vw;
     height: 100vh;
@@ -513,6 +509,50 @@ body {
   }
   .icon-home:hover {
     background-color: rgba(255, 225, 204, 0.89);
+  }
+  .enabled-menu {
+    display: block;
+  }
+  .disabled-menu {
+    display: none;
+  }
+  .btn-burger {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+  .btn-burger hr {
+    width: 30px;
+    height: 5px;
+    background-color: #4e1706;
+  }
+  .nav-mobile {
+    width: 100%;
+    margin-top: 50vh;
+  }
+  .nav-mobile ul {
+    display: flex;
+    align-items: center;
+    border: 2px solid #4e1706;
+    border-top: 1px solid #4e1706;
+    height: 28px;
+    background-color: #c69572;
+    list-style: none;
+    line-height: 80%;
+    padding-left: 5px;
+  }
+  .nav-mobile ul:hover {
+    color: #f8f4f3;
+  }
+  .nav-mobile a {
+    text-decoration: none;
+    color: black;
+  }
+  .logOut:hover {
+    color: #f8f4f3;
   }
   .container-me-main {
     width: 100vw;
@@ -606,8 +646,10 @@ body {
     align-content: space-between;
     flex-direction: column;
   }
-
-  .photo-friend {
+  <<<<<<<
+    HEAD
+    =======>>>>>>>c9c98db16fec58e948082c19aa633650979425f0
+    .photo-friend {
     width: 50px;
   }
   .section-posts-second {

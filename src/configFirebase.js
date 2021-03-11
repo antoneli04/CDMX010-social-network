@@ -82,3 +82,38 @@ export function authFacebook() {
       alert(err);
     });
 }
+
+export function salir() {
+  firebase
+    .auth()
+    .signOut()
+    .then((res) => {
+      //document.location.href='/';
+      onNavigate("/");
+    })
+    .catch((err) => {
+      alert(err);
+    });
+}
+
+export function verAutenticacion() {
+  firebase.auth().onAuthStateChanged((res) => {
+    if (res == null) {
+      console.log("si es null");
+      document.getElementById("me-mobile").style.display = "none";
+      //document.getElementById("me-desktop").style.display = "none";
+      document.getElementById("home-mobile").style.display = "none";
+      // document.getElementById("home-desktop").style.display = "none";
+      document.getElementById("div-register").style.display = "inline-block";
+      document.getElementById("div-login").style.display = "inline-block";
+    } else {
+      console.log("no es null");
+      document.getElementById("me-mobile").style.display = "inline-block";
+      // document.getElementById("me-desktop").style.display = "inline-block";
+      document.getElementById("home-mobile").style.display = "inline-block";
+      // document.getElementById("home-desktop").style.display = "inline-block";
+      document.getElementById("div-register").style.display = "none";
+      document.getElementById("div-login").style.display = "none";
+    }
+  });
+}
