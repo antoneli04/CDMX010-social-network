@@ -110,10 +110,10 @@ export function verAutenticacion() {
       console.log("no es null");
       document.getElementById("me-mobile").style.display = "inline-block";
       // document.getElementById("me-desktop").style.display = "inline-block";
-      document.getElementById("home-mobile").style.display = "inline-block";
+      // document.getElementById("home-mobile").style.display = "inline-block";
       // document.getElementById("home-desktop").style.display = "inline-block";
-      document.getElementById("div-register").style.display = "none";
-      document.getElementById("div-login").style.display = "none";
+      // document.getElementById("div-register").style.display = "none";
+      // document.getElementById("div-login").style.display = "none";
     }
   });
 }
