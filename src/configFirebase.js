@@ -15,33 +15,39 @@ firebase.initializeApp(firebaseConfig);
 
 export const dataBase = firebase.firestore();
 
+export function activeUser() {
+  return firebase.auth().currentUser;
+}
+
 export function validarEmail(valor) {
   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(valor)) {
-    alert("La dirección de email " + valor + " es correcta.");
+    // eslint-disable-next-line no-alert
+    alert(`La dirección de email ${valor} es correcta.`);
   } else {
+    // eslint-disable-next-line no-alert
     alert("La dirección de email es incorrecta.");
   }
 }
 
 export function createUser() {
-  let email = document.getElementById("email-register").value;
-  let password = document.getElementById("password-register").value;
+  const email = document.getElementById("email-register").value;
+  const password = document.getElementById("password-register").value;
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then((res) => {
       //onNavigate('/home');
-      alert("Se registro correctamente");
+      alert("Se registro correctamente", res);
     })
     .catch((err) => {
       onNavigate("/register");
-      alert("Ocurrio un error");
+      alert("Ocurrio un error", err);
     });
 }
 
 export function logIn() {
-  let emailLogin = document.getElementById("email-login").value;
-  let passwordLogin = document.getElementById("password-login").value;
+  const emailLogin = document.getElementById("email-login").value;
+  const passwordLogin = document.getElementById("password-login").value;
   firebase
     .auth()
     .signInWithEmailAndPassword(emailLogin, passwordLogin)
@@ -49,8 +55,7 @@ export function logIn() {
       onNavigate("/home");
     })
     .catch((err) => {
-      //console.log('error', err);
-      alert("Ocurrio un error");
+      alert("Ocurrio el error:", err);
       onNavigate("/");
     });
 }
@@ -88,7 +93,7 @@ export function salir() {
     .auth()
     .signOut()
     .then((res) => {
-      //document.location.href='/';
+      console.log(res);
       onNavigate("/");
     })
     .catch((err) => {
@@ -101,19 +106,15 @@ export function verAutenticacion() {
     if (res == null) {
       console.log("si es null");
       document.getElementById("me-mobile").style.display = "none";
-      //document.getElementById("me-desktop").style.display = "none";
       document.getElementById("home-mobile").style.display = "none";
-      // document.getElementById("home-desktop").style.display = "none";
       document.getElementById("div-register").style.display = "inline-block";
       document.getElementById("div-login").style.display = "inline-block";
     } else {
       console.log("no es null");
       document.getElementById("me-mobile").style.display = "inline-block";
-      // document.getElementById("me-desktop").style.display = "inline-block";
-      // document.getElementById("home-mobile").style.display = "inline-block";
-      // document.getElementById("home-desktop").style.display = "inline-block";
-      // document.getElementById("div-register").style.display = "none";
-      // document.getElementById("div-login").style.display = "none";
+      document.getElementById("home-mobile").style.display = "inline-block";
+      document.getElementById("div-register").style.display = "none";
+      document.getElementById("div-login").style.display = "none";
     }
   });
 }

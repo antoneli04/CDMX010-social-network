@@ -18,29 +18,6 @@ body {
   color: black;
   padding: 10px;
 }
-/*-------Desktop-------*/
-@media only screen and (max-width: 1920px) {
-  #home-desktop {
-    display: block;
-  }
-  #home-mobile {
-    display: none;
-  }
-  #me-desktop {
-    display: block;
-  }
-  #me-mobile {
-    display: none;
-  }
-  /*My profile Desktop*/
-  .me-mobile {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
 /*  Laptop */
 @media only screen and (max-width: 1920px) {
   .div-login {
@@ -278,6 +255,11 @@ body {
     border: 1px solid #4e1706;
     margin: 3%;
   }
+  .alerta {
+    width: 200px;
+    height: 200px;
+    background-color: chartreuse;
+  }
   .my-posts {
     width: 80vh;
   }
@@ -369,6 +351,17 @@ body {
     background-color: #dfe1e3;
     border: 2px solid #4e1706;
     border-radius: 15px;
+  }
+  .counter {
+    padding-left: 10px;
+    color: #4e1706;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .icon-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
   .container-counter {
     width: 80vw;
