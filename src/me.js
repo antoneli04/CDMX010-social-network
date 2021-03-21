@@ -1,9 +1,3 @@
-import {
-  dataBase,
-  salir,
-  activeUser,
-  verAutenticacion,
-} from "./configFirebase.js";
 import { onNavigate } from "./routes.js";
 
 export const me = `
@@ -18,7 +12,7 @@ export const me = `
       <ul><li>Cafeterias cerca</li></ul>
       <ul><li>Ayuda y soporte técnico</li></ul>
       <ul><li>Configuracion</li></ul>
-      <ul><li><a class='logOut'>Cerrar sesión</a></li></ul>
+      <ul><li><a class='logOut' id='salir'>Cerrar sesión</a></li></ul>
     </nav>
     <img id='logo'class='logo-home' src='../assets/coffehouseletras-01.png' alt='Logo Coffee House'>
     <div class='div-search-head'>
@@ -85,37 +79,17 @@ export const me = `
 </div>
 `;
 
-// --------Mobile--------- //
-
 let editStatus = false;
 let idMob = "";
 
-// GUARDAR POST //
-const savePost = (inputPostMob, likes) => {
-  dataBase.collection("posts").doc().set({
-    inputPostMob,
-    likes,
-  });
-};
-
-const getPost = (id) => dataBase.collection("posts").doc(id).get();
-const onGetPosts = (callback) =>
-  dataBase.collection("posts").onSnapshot(callback);
-const deletePost = (id) => dataBase.collection("posts").doc(id).delete();
-const updatePost = (id, updatedPost) =>
-  dataBase.collection("posts").doc(id).update(updatedPost);
-
-// document.addEventListener('DOMContentLoaded', async (e)=>{
-export async function agregapost() {
+export async function agregapost(firebaseClient) {
   const sectionPostMob = document.getElementById("section-post-mobile");
-  onGetPosts((querySnapshot) => {
+  firebaseClient.onGetPosts((querySnapshot) => {
     sectionPostMob.innerHTML = "";
     querySnapshot.forEach((doc) => {
       const publicationMob = doc.data();
       const numLikes = publicationMob.likes;
-      console.log(publicationMob);
       publicationMob.id = doc.id;
-      console.log(publicationMob.id);
       sectionPostMob.innerHTML += `
       <div class='myPost' id='imagen'>
         <p>${publicationMob.inputPostMob}</p>
@@ -129,26 +103,22 @@ export async function agregapost() {
       `;
 
       const btnLike = document.querySelectorAll(".icon-likes");
-      const user = activeUser();
+      const user = firebaseClient.activeUser();
       btnLike.forEach((btn) => {
         btn.addEventListener("click", async (e) => {
           const id = e.target.dataset.id;
-          const docMob = await getPost(id);
+          const docMob = await firebaseClient.getPost(id);
           const postMob = docMob.data();
           if (postMob.likes.includes(user.email)) {
             const filteredEmails = postMob.likes.filter(
               (email) => email !== user.email
             );
             const updates = { likes: filteredEmails };
-            await updatePost(id, updates);
+            await firebaseClient.updatePost(id, updates);
           } else {
             postMob.likes.push(user.email);
             const updates = { likes: postMob.likes };
-            await updatePost(id, updates);
-            // document.getElementById('color').style.backgroundColor = 'brown';
-            // sectionPostMob['icon-likes'].innerHTML = `
-            // <img data-id='${publicationMob.id}' class='icons-posts' src='../assets/cup-like.png'>
-            // `;
+            await firebaseClient.updatePost(id, updates);
           }
         });
       });
@@ -158,7 +128,7 @@ export async function agregapost() {
         btn.addEventListener("click", async (e) => {
           const mnjConfirm = confirm("¿Deseas borrar el post?");
           if (mnjConfirm === true) {
-            await deletePost(e.target.dataset.id);
+            await firebaseClient.deletePost(e.target.dataset.id);
           }
         });
       });
@@ -168,7 +138,7 @@ export async function agregapost() {
       btnsEditMob.forEach((btn) => {
         btn.addEventListener("click", async (e) => {
           if (confirm("¿Deseas editar el post?")) {
-            const docMob = await getPost(e.target.dataset.id);
+            const docMob = await firebaseClient.getPost(e.target.dataset.id);
             const postMob = docMob.data();
             editStatus = true;
             idMob = docMob.id;
@@ -183,38 +153,41 @@ export async function agregapost() {
   });
 }
 
-export function meVista(container) {
+export function meVista(container, firebaseClient) {
   // eslint-disable-next-line no-param-reassign
   container.innerHTML = me;
-  agregapost();
-}
+  agregapost(firebaseClient);
 
-// CAPTURANDO EVENTOS DE FORM //
-document.addEventListener("submit", async (e) => {
-  if (e.target.matches("#my-posts-mobile")) {
-    const myPostMob = document.getElementById("my-posts-mobile");
-    e.preventDefault();
-    const inputPostMob = myPostMob["input-post-mobile"];
-    console.log(inputPostMob);
-    if (!editStatus) {
-      await savePost(inputPostMob.value, []);
-      setTimeout(() => {
-        alert("Tu post se ha publicado");
-      }, 1000);
-    } else {
-      await updatePost(idMob, {
-        inputPostMob: inputPostMob.value,
-      });
-      editStatus = false;
-      idMob = "";
-      myPostMob["send-icon-mobile"].innerHTML = ` 
-      <button id='send-icon-mobile' class='btn-icons'> <img class='send-icon icons-posts' src='../assets/send-icon.png'></button>
-      `;
+  document.addEventListener("submit", async (e) => {
+    if (e.target.matches("#my-posts-mobile")) {
+      const myPostMob = document.getElementById("my-posts-mobile");
+      e.preventDefault();
+      const inputPostMob = myPostMob["input-post-mobile"];
+      if (!editStatus) {
+        await firebaseClient.savePost(inputPostMob.value, []);
+        setTimeout(() => {
+          alert("Tu post se ha publicado");
+        }, 1000);
+      } else {
+        await firebaseClient.updatePost(idMob, {
+          inputPostMob: inputPostMob.value,
+        });
+        editStatus = false;
+        idMob = "";
+        myPostMob["send-icon-mobile"].innerHTML = ` 
+        <button id='send-icon-mobile' class='btn-icons'> <img class='send-icon icons-posts' src='../assets/send-icon.png'></button>
+        `;
+      }
+      myPostMob.reset();
+      inputPostMob.focus();
     }
-    myPostMob.reset();
-    inputPostMob.focus();
-  }
-});
+  });
+  const logoutLink = document.getElementById("salir");
+  logoutLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    firebaseClient.salir();
+  });
+}
 
 function showMenu() {
   const menu = document.getElementById("nav-mobile");
@@ -229,30 +202,19 @@ function showMenu() {
 
 document.addEventListener("click", (e) => {
   if (e.target.matches("#calendar")) {
-    console.log("Estas en home");
     e.preventDefault();
     onNavigate("/home");
   }
   if (e.target.matches("#me")) {
-    console.log("Estas en me");
     e.preventDefault();
     onNavigate("/me");
   }
-  if (e.target.matches(".logOut")) {
-    salir();
-    e.preventDefault();
-  }
+  // if (e.target.matches('.logOut')) {
+  //   firebaseClient.salir();
+  //   e.preventDefault();
+  // }
   if (e.target.matches(".burger")) {
-    console.log("Burger");
     showMenu();
     e.preventDefault();
   }
-  if (e.target.matches("#icon-likes")) {
-    console.log("Me gusta");
-  }
 });
-
-window.onload = function () {
-  console.log("aquí estoy");
-  verAutenticacion();
-};
