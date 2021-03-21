@@ -1,6 +1,5 @@
-// import { salir, verAutenticacion} from './configFirebase.js';
-
-export const home = `
+export const home = (container, firebaseClient) => {
+  const html = `
 <div id='home-mobile' class='me-mobile'>
     <header class='container-home-head'>
         <button class='btn-burger burger'><hr><hr><hr></button>
@@ -12,7 +11,7 @@ export const home = `
             <ul><li>Cafeterias cerca</li></ul>
             <ul><li>Ayuda y soporte técnico</li></ul>
             <ul><li>Configuracion</li></ul>
-            <ul><li><a class='logOut'>Cerrar sesión</a></li></ul>
+            <ul><li><a class='logOut' id="logOut-home">Cerrar sesión</a></li></ul>
         </nav>
         <img class='logo-home' src='../assets/coffehouseletras-01.png' alt='Logo Coffee House'>
         <div class='div-search-head'>
@@ -72,13 +71,28 @@ export const home = `
 </div>
 `;
 
-// document.addEventListener('click', (e) =>{
-//     if(e.target.matches('.logOut')){
-//         salir();
-//     }
-// })
+  container.innerHTML = html;
 
-// window.onload = function(){
-//     console.log('aquí estoy');
-//     verAutenticacion();
-// }
+  function showMenu() {
+    const menu = document.getElementById("nav-mobile");
+    if (menu.classList.contains("disabled-menu")) {
+      menu.classList.remove("disabled-menu");
+      menu.classList.add("enabled-menu");
+    } else {
+      menu.classList.remove("enabled-menu");
+      menu.classList.add("disabled-menu");
+    }
+  }
+
+  document.querySelector(".burger").addEventListener("click", (e) => {
+    e.preventDefault();
+    showMenu();
+  });
+
+  const logoutLink = document.getElementById("logOut-home");
+  console.log(logoutLink);
+  logoutLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    firebaseClient.salir();
+  });
+};

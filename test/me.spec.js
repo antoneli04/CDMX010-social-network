@@ -9,27 +9,29 @@
 //   });
 // });
 
-import { login } from '../src/login.js';
-import { onNavigate } from '../src/routes.js';
+import { login } from "../src/login.js";
+
 // function sumar(a, b) {
 //   return a + b;
 // }
 // sumar();
-describe('Uso de DOM', () => {
-  const renderizado = login;
+describe("Uso de DOM", () => {
+  const firebase = { login: () => {} };
+  const container = document.createElement("div");
+  const renderizado = login(container, firebase);
   // console.log(renderizado);
-  it('Aseguraros que existe un BOTON AQUÍ en el DOM', () => {
+  it("Aseguraros que existe un BOTON AQUÍ en el DOM", () => {
     // expect(sumar(2, 2)).toBe(4);
 
     expect(login).toMatchSnapshot();
     // expect(renderizado.outerHTML).toBe(`<p>Registrate <button class='input-login send' id='hereRegister'>AQUI</button></p>`);
   });
 
-  it('Ya es vierness', () => {
-    const boton = renderizado.querySelector('#hereRegister');
+  it("Ya es vierness", () => {
+    const boton = renderizado.querySelector("#hereRegister");
     boton.click();
     console.log(boton);
-    expect(renderizado.outerHTML).toBe(onNavigate('/register'));
+    // expect(renderizado.outerHTML).toBe(onNavigate("/register"));
   });
 });
 
@@ -45,6 +47,6 @@ describe('Uso de DOM', () => {
 //     const getPosts = jest.fn().mockImplementation(() => Promise.resolve(post));
 //     const firebase = { getPosts };
 //     await agregapost(target, firebase);
-//     
+//
 //   });
 // });

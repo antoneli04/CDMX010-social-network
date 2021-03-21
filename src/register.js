@@ -1,7 +1,20 @@
-import { createUser, validarEmail } from "./configFirebase.js";
 import { onNavigate } from "./routes.js";
 
-export const register = `
+const registerEvents = (firebaseClient) => {
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("#btn-register")) {
+      firebaseClient.createUser();
+      onNavigate("/home");
+    }
+    if (e.target.matches("#backToLogin")) {
+      onNavigate("/");
+    }
+  });
+};
+
+export const register = (container, firebaseClient) => {
+  const html = `
+
 <div class='div-register'>
   <div class='container-image'>
     <img class='img-logo-register' src='./assets/coffeehousesmall-01.png' alt='Logo Coffee House'><br>
@@ -18,16 +31,7 @@ export const register = `
   </div>
 </div>
 `;
+  container.innerHTML = html;
 
-document.addEventListener("click", (e) => {
-  if (e.target.matches("#btn-register")) {
-    console.log("Estas en Home");
-    //validarEmail();
-    createUser();
-    onNavigate("/home");
-  }
-  if (e.target.matches("#backToLogin")) {
-    console.log("Regresas a Login");
-    onNavigate("/");
-  }
-});
+  registerEvents(firebaseClient);
+};

@@ -1,12 +1,13 @@
-import {
-  logIn,
-  authGoogle,
-  authFacebook,
-  validarEmail,
-} from "./configFirebase.js";
+// import {
+//   logIn,
+//   authGoogle,
+//   authFacebook,
+//   validarEmail,
+// } from "./configFirebase.js";
 import { onNavigate } from "./routes.js";
 
-export const login = `
+export const login = (container, firebaseClient) => {
+  const html = `
 <div class='div-login'>
   <div class='container-image'>
     <img class='img-logo-login' src='./assets/coffeehousesmall-01.png' alt='Logo Coffee House'>
@@ -34,23 +35,40 @@ export const login = `
 </div>
 `;
 
-document.addEventListener("click", (e) => {
-  if (e.target.matches("#button-login")) {
-    console.log("Estas en Home");
-    validarEmail();
-    logIn();
-    e.preventDefault();
-  }
-  if (e.target.matches("#icon-google")) {
-    console.log("Estas en Home");
-    authGoogle();
-  }
-  if (e.target.matches("#icon-facebook")) {
-    console.log("Estas en Home");
-    authFacebook();
-  }
-  if (e.target.matches("#hereRegister")) {
-    console.log("Estas en Register");
-    onNavigate("/register");
-  }
-});
+  container.innerHTML = html;
+
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("#button-login")) {
+      console.log("Estas en Home");
+      firebaseClient.validarEmail();
+      firebaseClient.logIn();
+      e.preventDefault();
+    }
+    if (e.target.matches("#icon-google")) {
+      console.log("Estas en Home");
+      firebaseClient
+        .authGoogle()
+        .then((user) => {
+          console.log(user);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+    if (e.target.matches("#icon-facebook")) {
+      console.log("Estas en Home");
+      firebaseClient
+        .authFacebook()
+        .then((user) => {
+          console.log(user);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+    if (e.target.matches("#hereRegister")) {
+      console.log("Estas en Register");
+      onNavigate("/register");
+    }
+  });
+};
