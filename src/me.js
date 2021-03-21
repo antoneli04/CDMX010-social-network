@@ -13,7 +13,7 @@ export const me = () => {
       <ul><li>Cafeterias cerca</li></ul>
       <ul><li>Ayuda y soporte técnico</li></ul>
       <ul><li>Configuracion</li></ul>
-      <ul><li><a class='logOut' id="logOut">Cerrar sesión</a></li></ul>
+      <ul><li><a class='logOut' id='salir'>Cerrar sesión</a></li></ul>
     </nav>
     <img id='logo'class='logo-home' src='../assets/coffehouseletras-01.png' alt='Logo Coffee House'>
     <div class='div-search-head'>
@@ -79,12 +79,10 @@ export const me = () => {
   </footer>
 </div>
 `;
-};
 
 let editStatus = false;
 let idMob = "";
 
-// document.addEventListener('DOMContentLoaded', async (e)=>{
 export async function agregapost(firebaseClient) {
   const sectionPostMob = document.getElementById("section-post-mobile");
   firebaseClient.onGetPosts((querySnapshot) => {
@@ -92,9 +90,7 @@ export async function agregapost(firebaseClient) {
     querySnapshot.forEach((doc) => {
       const publicationMob = doc.data();
       const numLikes = publicationMob.likes;
-      console.log(publicationMob);
       publicationMob.id = doc.id;
-      console.log(publicationMob.id);
       sectionPostMob.innerHTML += `
       <div class='myPost' id='imagen'>
         <p>${publicationMob.inputPostMob}</p>
@@ -124,10 +120,6 @@ export async function agregapost(firebaseClient) {
             postMob.likes.push(user.email);
             const updates = { likes: postMob.likes };
             await firebaseClient.updatePost(id, updates);
-            // document.getElementById('color').style.backgroundColor = 'brown';
-            // sectionPostMob['icon-likes'].innerHTML = `
-            // <img data-id='${publicationMob.id}' class='icons-posts' src='../assets/cup-like.png'>
-            // `;
           }
         });
       });
@@ -162,26 +154,6 @@ export async function agregapost(firebaseClient) {
   });
 }
 
-// document.addEventListener("click", (e) => {
-// async function likes() {
-// const likeButton = document.getElementById("btn-likes");
-// let cupLikes = document.getElementById("icon-likes");
-// let count = document.getElementById("counter");
-// let clicked = false;
-// if (e.target.matches("#icon-likes")) {
-//   console.log("me gusta");
-// }
-//   if (!clicked) {
-//     clicked = true;
-//     cupLikes.style.backgroundColor = "brown";
-//     count.textContent++;
-//   } else {
-//     clicked = false;
-//     cupLikes.style.backgroundColor = "blue";
-//     count.textContent--;
-//   }
-// }
-
 export function meVista(container, firebaseClient) {
   // eslint-disable-next-line no-param-reassign
   container.innerHTML = me;
@@ -192,7 +164,6 @@ export function meVista(container, firebaseClient) {
       const myPostMob = document.getElementById("my-posts-mobile");
       e.preventDefault();
       const inputPostMob = myPostMob["input-post-mobile"];
-      console.log(inputPostMob);
       if (!editStatus) {
         await firebaseClient.savePost(inputPostMob.value, []);
         setTimeout(() => {
@@ -205,15 +176,14 @@ export function meVista(container, firebaseClient) {
         editStatus = false;
         idMob = "";
         myPostMob["send-icon-mobile"].innerHTML = ` 
-      <button id='send-icon-mobile' class='btn-icons'> <img class='send-icon icons-posts' src='../assets/send-icon.png'></button>
-      `;
+        <button id='send-icon-mobile' class='btn-icons'> <img class='send-icon icons-posts' src='../assets/send-icon.png'></button>
+        `;
       }
       myPostMob.reset();
       inputPostMob.focus();
     }
   });
-  const logoutLink = document.getElementById("logOut");
-  console.log(logoutLink);
+  const logoutLink = document.getElementById("salir");
   logoutLink.addEventListener("click", (e) => {
     e.preventDefault();
     firebaseClient.salir();
@@ -233,21 +203,19 @@ function showMenu() {
 
 document.addEventListener("click", (e) => {
   if (e.target.matches("#calendar")) {
-    console.log("Estas en home");
     e.preventDefault();
     onNavigate("/home");
   }
   if (e.target.matches("#me")) {
-    console.log("Estas en me");
     e.preventDefault();
     onNavigate("/me");
   }
+  // if (e.target.matches('.logOut')) {
+  //   firebaseClient.salir();
+  //   e.preventDefault();
+  // }
   if (e.target.matches(".burger")) {
-    console.log("Burger");
     showMenu();
     e.preventDefault();
-  }
-  if (e.target.matches("#icon-likes")) {
-    console.log("Me gusta");
   }
 });
