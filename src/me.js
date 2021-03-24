@@ -154,7 +154,6 @@ export async function agregapost(firebaseClient) {
 }
 
 export function meVista(container, firebaseClient) {
-  // eslint-disable-next-line no-param-reassign
   container.innerHTML = me;
   agregapost(firebaseClient);
 
@@ -209,10 +208,10 @@ document.addEventListener("click", (e) => {
     e.preventDefault();
     onNavigate("/me");
   }
-  // if (e.target.matches('.logOut')) {
-  //   firebaseClient.salir();
-  //   e.preventDefault();
-  // }
+  if (e.target.matches(".logOut")) {
+    firebaseClient.salir();
+    e.preventDefault();
+  }
   if (e.target.matches(".burger")) {
     showMenu();
     e.preventDefault();
