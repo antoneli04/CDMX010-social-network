@@ -1,5 +1,4 @@
 import { onNavigate } from "./routes.js";
-
 export const me = () => {
   `
 <div id='me-mobile' class='me-mobile'>
@@ -79,10 +78,10 @@ export const me = () => {
   </footer>
 </div>
 `;
+};
 
 let editStatus = false;
 let idMob = "";
-
 export async function agregapost(firebaseClient) {
   const sectionPostMob = document.getElementById("section-post-mobile");
   firebaseClient.onGetPosts((querySnapshot) => {
@@ -102,7 +101,6 @@ export async function agregapost(firebaseClient) {
         <span class='counter' id='counter' data-id='${publicationMob.id}'>${numLikes.length}</span>
       </div>
       `;
-
       const btnLike = document.querySelectorAll(".icon-likes");
       const user = firebaseClient.activeUser();
       btnLike.forEach((btn) => {
@@ -123,7 +121,6 @@ export async function agregapost(firebaseClient) {
           }
         });
       });
-
       const btnsTrashMob = document.querySelectorAll(".icon-trash-mobile");
       btnsTrashMob.forEach((btn) => {
         btn.addEventListener("click", async (e) => {
@@ -133,7 +130,6 @@ export async function agregapost(firebaseClient) {
           }
         });
       });
-
       const myPostMob = document.getElementById("my-posts-mobile");
       const btnsEditMob = document.querySelectorAll(".icon-edit-mobile");
       btnsEditMob.forEach((btn) => {
@@ -153,12 +149,9 @@ export async function agregapost(firebaseClient) {
     });
   });
 }
-
 export function meVista(container, firebaseClient) {
-  // eslint-disable-next-line no-param-reassign
   container.innerHTML = me;
   agregapost(firebaseClient);
-
   document.addEventListener("submit", async (e) => {
     if (e.target.matches("#my-posts-mobile")) {
       const myPostMob = document.getElementById("my-posts-mobile");
@@ -189,7 +182,6 @@ export function meVista(container, firebaseClient) {
     firebaseClient.salir();
   });
 }
-
 function showMenu() {
   const menu = document.getElementById("nav-mobile");
   if (menu.classList.contains("disabled-menu")) {
@@ -200,7 +192,6 @@ function showMenu() {
     menu.classList.add("disabled-menu");
   }
 }
-
 document.addEventListener("click", (e) => {
   if (e.target.matches("#calendar")) {
     e.preventDefault();
@@ -210,10 +201,6 @@ document.addEventListener("click", (e) => {
     e.preventDefault();
     onNavigate("/me");
   }
-  // if (e.target.matches('.logOut')) {
-  //   firebaseClient.salir();
-  //   e.preventDefault();
-  // }
   if (e.target.matches(".burger")) {
     showMenu();
     e.preventDefault();

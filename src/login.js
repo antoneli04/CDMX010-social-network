@@ -30,7 +30,6 @@ export const login = (container, firebaseClient) => {
   </div>
   `;
 
-  // eslint-disable-next-line no-param-reassign
   container.innerHTML = html;
 
   document.addEventListener("click", (e) => {
