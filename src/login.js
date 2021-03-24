@@ -1,4 +1,3 @@
-// import { logIn, authGoogle, authFacebook, validarEmail} from './configFirebase.js';
 import { onNavigate } from "./routes.js";
 
 export const login = (container, firebaseClient) => {

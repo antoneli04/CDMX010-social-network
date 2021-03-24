@@ -201,6 +201,10 @@ document.addEventListener("click", (e) => {
     e.preventDefault();
     onNavigate("/me");
   }
+  if (e.target.matches(".logOut")) {
+    firebaseClient.salir();
+    e.preventDefault();
+  }
   if (e.target.matches(".burger")) {
     showMenu();
     e.preventDefault();
